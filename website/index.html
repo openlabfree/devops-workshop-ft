@@ -1,1 +1,191 @@
-<h1>Hey! I'm Prem and I am learning DEVops.</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prem Poudel | Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #222;
+      color: white;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover {
+      color: #00bcd4;
+    }
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #222;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .hamburger {
+        display: block;
+      }
+    }
+
+    section {
+      padding: 4rem 1.5rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .home {
+      text-align: center;
+      background-color: #00bcd4;
+      color: white;
+      padding: 6rem 1rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+    }
+    h2 {
+      margin-bottom: 1rem;
+      color: #00bcd4;
+    }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .skills-list li {
+      background: #eee;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      list-style: none;
+    }
+    .project-card {
+      background: #fff;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
+    .project-card h3 {
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+    .contact a {
+      color: #00bcd4;
+      text-decoration: none;
+    }
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">Prem Poudel</div>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="home">
+    <h1>Hello, I'm Prem Poudel</h1>
+    <p>Aspiring AI & DevOps Engineer</p>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m a passionate learner focused on DevOps, Machine Learning, and Backend Development. I love building efficient systems and continuously improving my tech stack.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>Python</li>
+      <li>Django REST</li>
+      <li>Docker</li>
+      <li>Git & GitHub</li>
+      <li>Linux/WSL</li>
+      <li>AWS Basics</li>
+      <li>HTML, CSS, JS</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <h3>Disease Prediction API</h3>
+      <p>A Machine Learning-based API built with Django for disease prediction using medical features.</p>
+    </div>
+    <div class="project-card">
+      <h3>Student Management SaaS</h3>
+      <p>Multi-tenant backend system for schools to manage students, teachers, and attendance.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:prem@example.com">prem@example.com</a></p>
+    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">yourusername</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Prem Poudel. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

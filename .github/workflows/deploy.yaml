@@ -23,6 +23,8 @@ jobs:
           git checkout ${{ github.ref_name }}
           git pull
           # Update env
-          sudo cp website/index.html /var/www/html
+          sudo mkdir -p /var/www/html/${{ github.ref_name }}
+          WEB_ROOT="/var/www/html/${{ github.ref_name }}"
+          sudo cp website/index.html/${WEB_ROOT}
           sudo systemctl restart nginx
           EOF
