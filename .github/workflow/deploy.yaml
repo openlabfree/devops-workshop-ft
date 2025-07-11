@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-      -workspace/Sudip
+      - workspace/Sudip
 jobs:
   deploy:
     runs-on: ubuntu-latest
