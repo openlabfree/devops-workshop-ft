@@ -25,6 +25,6 @@ jobs:
           # Update env
           sudo mkdir -p /var/www/html/${{ github.ref_name }}
           WEB_ROOT="/var/www/html/${{ github.ref_name }}"
-          sudo cp website/index.html/${WEB_ROOT}
+          sudo cp website/index.html $WEB_ROOT/
           sudo systemctl restart nginx
           EOF
