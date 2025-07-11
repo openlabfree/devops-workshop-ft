@@ -10,6 +10,19 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Deploy to remote vm
+      - name: setup ssh host
         run: |
-            echo "Deploying to remote vm"   
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_HOST_KEY }}" | base64 -d > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+      - name: Deploy to nginx
+        run: |
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@${{ vars.SSH_HOST }} <<EOF
+          cd /home/ubuntu/devops-workshop-ft
+          git checkout ${{ github.ref_name }}
+          git pull
+          # Update env
+          sudo cp website/index.html /var/www/html
+          sudo systemctl restart nginx
+          EOF
