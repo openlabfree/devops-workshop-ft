@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-      -workshop/yuresh
+      - workshop/yuresh
 jobs:
   deploy:
     runs-on: ubuntu-latest
