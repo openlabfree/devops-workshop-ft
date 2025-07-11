@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-      - workshop/prem
+      - prem
 jobs:
   deploy:
     runs-on: ubuntu-latest
