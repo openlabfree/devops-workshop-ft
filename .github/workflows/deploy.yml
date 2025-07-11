@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-      - prem
+      - qamal
 jobs:
   deploy:
     runs-on: ubuntu-latest
